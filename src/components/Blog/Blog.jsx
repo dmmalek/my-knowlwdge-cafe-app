@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { IoBookmarkOutline } from "react-icons/io5";
 
-const Blog = ({ blog, handleAddToBookMark }) => {
+const Blog = ({ blog, handleAddToBookMark, handleAddTime }) => {
   const {
     cover,
     title,
@@ -35,11 +35,14 @@ const Blog = ({ blog, handleAddToBookMark }) => {
           <a href=""> #{hash}</a>
         </span>
       ))}
+      <br />
+      <button onClick={() => handleAddTime(reading_time)}>Mark as read</button>
     </div>
   );
 };
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
   handleAddToBookMark: PropTypes.func.isRequired,
+  handleAddTime: PropTypes.func.isRequired,
 };
 export default Blog;
